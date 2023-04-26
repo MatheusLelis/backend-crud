@@ -27,6 +27,7 @@ export class UsuariosController {
 
   @Get()
   findAll() {
+    console.log("aquiii findAll")
     return this.usuariosService.findAll();
   }
 
