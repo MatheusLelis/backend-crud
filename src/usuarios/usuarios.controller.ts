@@ -14,6 +14,7 @@ export class UsuariosController {
 
   @Post('login')
   login(@Body() login: Login) {
+    console.log("login = ")
     console.log("login = ", login)
     return this.usuariosService.login(login);
   }
