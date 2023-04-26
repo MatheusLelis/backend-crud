@@ -8,14 +8,13 @@ export class UsuariosController {
 
   @Post()
   create(@Body() usuario: Usuarios) {
-    console.log("aqui")
+    console.log("create")
     return this.usuariosService.create(usuario);
   }
 
   @Post('login')
   login(@Body() login: Login) {
     console.log("login = ")
-    console.log("login = ", login)
     return this.usuariosService.login(login);
   }
 
@@ -27,7 +26,7 @@ export class UsuariosController {
 
   @Get()
   findAll() {
-    console.log("aquiii findAll")
+    console.log("findAll")
     return this.usuariosService.findAll();
   }
 

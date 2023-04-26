@@ -150,15 +150,12 @@ export class UsuariosService {
       .leftJoin('usuarios.idStatus2', "idStatus2")
       
     if(+filtro.idStatus){
-      console.log('aqui = ', filtro.idStatus)
       usuarios.where("idStatus2.id = :idStatus", {idStatus: +filtro.idStatus})
     }
 
     const todosUsuarios = await usuarios.getMany()
 
     let todosUsuariosFiltrados2 = []
-
-    console.log('qtd = ', todosUsuarios.length)
 
     const todosUsuariosFiltrados = todosUsuarios.filter( async usuario => {
 
@@ -224,14 +221,11 @@ export class UsuariosService {
 
       todosUsuariosFiltrados2.push(usuario)
 
-      console.log("qtd 2 = ", todosUsuariosFiltrados2.length)
-
       return usuario
 
     })
 
-    console.log("qtd 3 = ", todosUsuariosFiltrados2.length)
-
+    console.log("qtd = ", todosUsuariosFiltrados2.length)
     return todosUsuariosFiltrados2
   }
 }
